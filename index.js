@@ -27,36 +27,48 @@ let demo = [];
 const libraryBookInsertingFn = function (data) {
     // dugging pupose
     // console.log(data);
-
-    data.map((data, index) => {
-        const newDiv = document.createElement("div");
-        newDiv.classList = "real-book-shawer"
-
-        const new_nested_div = `
-            <div class="image-div">
-                <a href=${data.infoLink} target="_blank">
-                    <img src=${data.image} alt="" >
-                </a>
-            </div>
-            <div class="basic-info-container">
-                <div class="book-shawer-meta">
+    
+    if (data.length>0) {
+        
+        data.map((data, index) => {
+            const newDiv = document.createElement("div");
+            newDiv.classList = "real-book-shawer";
+            const new_nested_div = `
+                <div class="image-div">
                     <a href=${data.infoLink} target="_blank">
-                        <h1 class="title">${data.title}</h1>
+                        <img src=${data.image} alt="" >
                     </a>
-                    <h2 class="author"><span>Authors</span>:- ${data.author.join("\n")}</h2>
                 </div>
-                <div class="book-shawer-meta">
-                    <h3 class="publisher"><span>Publisher</span>:- ${data.publisher}</h3>
-                    <h4 class="published-date"><span>Published Date:- </span>:- ${data.publised_date}</h4>
-                </div>
-            </div>`
-        newDiv.innerHTML = new_nested_div;
-
-        book_container.append(newDiv)
-    })
+                <div class="basic-info-container">
+                    <div class="book-shawer-meta">
+                        <a href=${data.infoLink} target="_blank">
+                            <h1 class="title">${data.title}</h1>
+                        </a>
+                        <h2 class="author"><span>Authors</span>:- ${data.author.join("\n")}</h2>
+                    </div>
+                    <div class="book-shawer-meta">
+                        <h3 class="publisher"><span>Publisher</span>:- ${data.publisher}</h3>
+                        <h4 class="published-date"><span>Published Date:- </span>:- ${data.publised_date}</h4>
+                    </div>
+                </div>`
+            newDiv.innerHTML = new_nested_div;
+    
+            book_container.append(newDiv)
+        })
+    }else{
+        const newDiv = document.createElement("div");
+            newDiv.classList = "real-book-shawer";
+            const new_nested_div = `
+                <div class="image-div">
+                    <h1>
+                        No Result Found ! 🤭
+                    </h1>
+                </div>`
+            newDiv.innerHTML = new_nested_div;
+    
+            book_container.append(newDiv)
+    }
 }
-
-
 
 // this is the methods of list and grid
 list.addEventListener("click", viewingChange);
