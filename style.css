@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #e8e8eb;
+    --common-padding: 10px 20px;
+    --common-margin-top: 5px;
+}
+
+body,
+html {
+    background: #bebcbc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main {
+    max-width: 1080px;
+    margin: 5px auto;
+    padding: var(--common-padding);
+    background-color: var(--main-color, #bebcbc);
+    /* this var hold globally defined variable, that variable name could be anything and it is holding that value, if not then fallback will be assigned */
+}
+
+.heading {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* searching div styling */
+.searching-div {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+input.searching {
+    padding: var(--common-padding);
+    border-radius: 20px;
+    border: none;
+}
+
+button {
+    padding: var(--common-padding);
+    background-color: rgb(190, 191, 190);
+    border-radius: 5px;
+    border: none;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out 0s;
+    /* in transition property you have to set following property , on which you have to apply transition and effect time, animation effect, delay */
+}
+
+button:hover {
+    background-color: rgb(164, 164, 164);
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* grid-list-container styling */
+.grid-list-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.grid,
+.list,
+.sort {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* sorting container */
+.sorting-container {
+    margin-top: 10px;
+}
+
+.sort {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline;
+    margin-top: 5px;
+}
+
+.sort-auther-year {
+    margin-top: 6px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 150px;
+}
+
+.holding-sort {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.holding-sort>input {
+    cursor: pointer;
+}
+
+/* book container */
+#book-container{
+    border-radius: 5px;
+    padding: var(--common-padding);
+    margin-top: var(--common-margin-top);
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: auto;
+    gap: 15px;
+}
+
+/* media query work from top to bottom so writting in this manner is neccessary */
+@media screen and (max-width: 720px) {
+    #book-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #book-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+img{
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.real-book-shawer {
+    background-color: rgb(234, 232, 232);
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 4px #ffffff;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.basic-info-container{
+    flex:1;
+}
+
+div.book-shawer-meta{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+h1.title{
+    font-size: 20px;
+}
+h2.author{
+    font-size: 18px;
+    color: #6a6a6a;
+    text-wrap: wrap;
+}
+h3.publisher{
+    font-size: 14px;
+    color: #9d9c9c;
+}
+h4.published-date{
+    font-size: 12px;
+}
+
+
+/* pagination styling */
+
+.pagination{
+    background-color: snow;
+    display: flex;
+    justify-content: center;
+    padding: 5px 5px;
+    margin-top: var(--common-margin-top);
+}
+.pagination>span{
+    width: fit-content;
+    background: sandybrown;
+    border-radius: 5px;
+    margin: 5px;
+    padding: var(--common-padding);
+}
+
+.pagination > #decrease_page,#increase_page{
+    cursor: pointer;
+}
+
+.pagination span:nth-child(2){
+    background-color: red;
+}
+
+.page_arrow{
+    font: bold 16px Arial;
+}

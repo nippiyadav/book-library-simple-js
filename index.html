@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+
+        <!-- library Book heading -->
+        <h1 class="heading">Books Library</h1>
+        <i ></i>
+
+        <!-- this is for the searching skeleton -->
+        <div class="searching-div">
+            <input class="searching" id="searching" type="search" placeholder="Searching title, author..">
+            <button class="searching-btn">Search</button>
+        </div>
+
+        <!-- list and grid view -->
+        <div class="grid-list-container">
+            <span id="list" class="list">List</span>
+            <span id="grid" class="grid">Grid</span>
+        </div>
+
+        <!-- this is for sorting -->
+        <div class="sorting-container">
+            <div class="sort">Sort</div>
+            <div class="sort-auther-year">
+                <div class="holding-sort">
+                    <label for="author">A-Z</label>
+                    <input type="checkbox" value="alphabetic" name="author" id="author" class="author">
+                </div>
+                <div class="holding-sort">
+                    <label for="year">Year</label>
+                    <input type="checkbox" value="year" name="year" id="year" class="year">
+                </div>
+            </div>
+        </div>
+
+        <!-- dispalying book container -->
+        <div class="book-container" id="book-container">
+            <div class="real-book-shawer">
+                <div class="image-div">
+                    <img src="" alt="">
+                </div>
+                <div class="basic-info-container">
+                    <div class="book-shawer-meta">
+                        <h1 class="title">Title</h1>
+                        <h2 class="author">Author</h2>
+                    </div>
+                    <div class="book-shawer-meta">
+                        <h3 class="publisher">Publisher</h3>
+                        <h4 class="published-date">Published Date</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- pagination -->
+        <div class="pagination">
+            <span id="decrease_page" class="page_arrow">
+                < </span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>223</span>
+                    <span id="increase_page" class="page_arrow"> > </span>
+        </div>
+    </main>
+
+    <!-- script link -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
